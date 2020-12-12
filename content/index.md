@@ -4,7 +4,12 @@
 
 # Project Start
 
-1. After pulling down this repo, run `rm -rf .git` and then init a new repo for this project
+1. Make a GitHub repo with the name of the client's site, we're using the example `yellow`.
+    * `git clone git@github.com:toughpixels/base.git yellow`
+    * `cd yellow`
+    * `git remote set-url origin git@github.com:toughpixels/yellow.git`
+    * `git branch -M main`
+    * `git push -u origin main`
 2. Gather all information the client wants since this will inform the design
 3. Make an initial design sketch
 
