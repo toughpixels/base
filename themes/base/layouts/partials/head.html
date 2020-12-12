@@ -1,0 +1,10 @@
+<head>
+    <title>{{ .Title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0">
+    <meta name="description" content="DESCRIPTION TEXT HERE!">
+    <meta name="keywords" content="KEYWORDS HERE!">
+    {{ $css := resources.Get "css/main.css" }}
+    {{ $style := $css | resources.PostCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+    {{- partial "favicons.html" . -}}
+</head>
