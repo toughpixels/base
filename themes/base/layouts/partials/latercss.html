@@ -1,0 +1,3 @@
+{{ $tachyons := resources.Get "css/tachyons.css" | minify | fingerprint  }}
+<link rel="preload" href="{{ $tachyons.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="{{ $tachyons.Permalink }}" /></noscript>

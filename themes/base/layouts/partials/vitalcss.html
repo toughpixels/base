@@ -1,0 +1,3 @@
+{{- $main := resources.Get "css/main.css" | minify | fingerprint  }}
+{{- $loadfirst := $main.Content | safeURL }}
+<style type="text/css">{{- $loadfirst -}}</style>
