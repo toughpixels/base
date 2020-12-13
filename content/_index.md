@@ -10,8 +10,9 @@
     * `git remote set-url origin git@github.com:toughpixels/yellow.git`
     * `git branch -M main`
     * `git push -u origin main`
-2. Gather all information the client wants since this will inform the design
-3. Make an initial design sketch
+1. Gather all information the client wants since this will inform the design
+1. Make an initial design sketch
+1. Update the `config.toml`
 
 # Project Finish
 
