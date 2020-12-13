@@ -1,3 +1,6 @@
 {{ $tachyons := resources.Get "css/tachyons.css" | minify | fingerprint  }}
+{{ $loadlate := resources.Get "css/later.css" | minify | fingerprint  }}
 <link rel="preload" href="{{ $tachyons.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ $tachyons.Permalink }}" /></noscript>
+<link rel="preload" href="{{ $loadlate.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript><link rel="stylesheet" href="{{ $loadlate.Permalink }}" /></noscript>
