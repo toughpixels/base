@@ -1,11 +1,8 @@
 <head>
-    <title>{{ .Title }}</title>
+    <title>{{ .Site.Title }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=0">
     <meta name="description" content="DESCRIPTION TEXT HERE!">
     <meta name="keywords" content="KEYWORDS HERE!">
-    {{ $css := resources.Get "css/main.css" | minify | fingerprint  }}
-    {{ $tachyons := resources.Get "css/tachyons.css" | minify | fingerprint  }}
-    <link rel="stylesheet" href="{{ $css.Permalink }}">
-    <link rel="stylesheet" href="{{ $tachyons.Permalink }}">
-    {{- partial "favicons.html" . -}}
+    {{- partial "vitalcss.html" -}}
+    {{- partial "latercss.html" -}}
 </head>
