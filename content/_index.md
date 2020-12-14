@@ -13,6 +13,7 @@
 2. Gather all information the client wants since this will inform the design
 3. Make an initial design sketch
 
+
 # Project Finish
 
 1. [Generate favicons](https://favicon.io/favicon-generator/) and drop all files into the root of the themes/base/static/ folder

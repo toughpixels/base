@@ -1,8 +1,14 @@
 <head>
-    <title>{{ .Site.Title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=0">
-    <meta name="description" content="DESCRIPTION TEXT HERE!">
-    <meta name="keywords" content="KEYWORDS HERE!">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ block "title" . }}{{ if .Title }}{{ .Title }} | {{ end }}{{end }}{{ .Site.Title }}</title>
+    <meta name="description" content="{{if .IsHome}}{{ $.Site.Params.description }}{{else}}{{.Description}}{{end}}">
+    <meta name="keywords" content="KEYWORDS HERE!">  
+    <meta name="author" content="YOUR NAME">
+    {{ template "_internal/opengraph.html" . }}  
+        <!-- For any google font you choose, please add "&display=swap" to the end of the href  -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Baloo+Tamma&display=swap">
     {{- partial "vitalcss.html" -}}
     {{- partial "latercss.html" -}}
+    {{- partial "favicons.html" . -}}
 </head>
