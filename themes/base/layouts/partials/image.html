@@ -1,0 +1,9 @@
+<picture>
+    {{- $altText  := replace .Name "_" " " }}
+    {{- $small := .Resize "320x" }}
+    {{- $medium := .Resize "640x" }}
+    {{- $large := .Resize "1280x" }}
+    <source media="(min-width: 1280px)" srcset="{{ $large.RelPermalink }}">
+    <source media="(min-width: 640px)" srcset="{{ $medium.RelPermalink }}">
+    <img src="{{ $small.RelPermalink }}" loading="lazy" alt="{{ $altText }}" />
+</picture>
