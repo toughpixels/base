@@ -1,0 +1,2 @@
+{{ $image  := .Get "src" }}
+{{ partial "image.html" (resources.Get $image) }}
