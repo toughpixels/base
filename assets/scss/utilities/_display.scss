@@ -1,0 +1,17 @@
+$reponsiveDisplayOptions: (
+  none,
+  block,
+  flex
+);
+@each $displayOption in $reponsiveDisplayOptions {
+  @include responsiveOptions('', $displayOption, 'display', $displayOption);
+}
+
+$displayOptions: (
+  inline,
+  inline-block,
+  grid
+);
+@each $displayOption in $displayOptions {
+  @include simpleOptions('', $displayOption, 'display', $displayOption);
+}

@@ -1,0 +1,38 @@
+// call any color in your palate quickly!
+// ex. color(primary)
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+// call any gap in your palate quickly!
+// ex. gap(large1)
+@function gap($key) {
+  @if map-has-key($gaps, $key) {
+    @return map-get($gaps, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $gaps.";
+  @return null;
+}
+
+// basics for creating your own utility class
+@mixin simpleOptions($classPrefix, $name, $property, $value, $end:'') {
+  .#{$classPrefix}#{$name} #{$end}{
+    #{$property}: $value;
+  }
+}
+// if you want to add responsive options...
+@mixin responsiveOptions($classPrefix, $name, $property, $value, $end:'') {
+  @include simpleOptions($classPrefix, $name, $property, $value, $end);
+  @each $breakpointName, $width in $breakpoints {
+    @include respond($breakpointName) {
+      .#{$breakpointName}\:#{$classPrefix}#{$name} #{$end}{
+        #{$property}: $value;
+      }
+    }
+  }
+}

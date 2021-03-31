@@ -1,0 +1,15 @@
+@mixin space-y($gap) {
+    > * + * {
+		margin-top: $gap;
+	}	
+}
+@mixin space-x($gap) {
+    > * + *  {
+		margin-left: $gap;
+	}
+}
+
+@mixin margin-x($gap) {
+	margin-right: $gap;
+	margin-left: $gap;
+}

@@ -1,0 +1,18 @@
+section, footer {
+    padding: 3rem 0;
+    @include respond(sm) {
+        padding: 6rem 0;
+    }
+    
+}
+
+section {
+
+    &:nth-child(odd) {
+        
+    }
+    &:nth-child(even) {
+        
+    }
+    
+}

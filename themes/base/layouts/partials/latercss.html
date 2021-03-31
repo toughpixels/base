@@ -1,7 +1,3 @@
-<link rel="preload" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css"/>
-</noscript>
-
-{{ $later := resources.Get "css/later.css" | minify | fingerprint  }}
+{{ $later := resources.Get "scss/later.scss" | toCSS | minify | fingerprint  }}
 <link rel="preload" href="{{ $later.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link rel="stylesheet" href="{{ $later.Permalink }}" /></noscript>

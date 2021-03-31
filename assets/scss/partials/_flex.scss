@@ -1,0 +1,39 @@
+// fill the available space
+.flex-1 {
+    flex: 1 1 0;
+}
+.direction {
+    &-column {
+        flex-direction: column;
+    }
+}
+// if the flex-direction is "row" (default)
+// "align" is vertical alignment and "justify" is horizontal alignment
+.align {
+    &-start {
+        align-items: flex-start;
+    }
+    &-center {
+        align-items: center;
+    }
+    &-end {
+        align-items: flex-end;
+    }
+}
+.justify {
+    &-start {
+        justify-content: flex-start;
+    }
+    &-center {
+        justify-content: center;
+    }
+    &-end {
+        justify-content: flex-end;
+    }
+}
+
+.sm\:row-reverse {
+    @include respond(sm) {
+        flex-direction: row-reverse;
+    }
+}

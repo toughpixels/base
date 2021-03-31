@@ -1,0 +1,23 @@
+@mixin generateResponsiveUtilityClasses($responsiveGapItems, $gapsWithZero) {
+	@each $item in $responsiveGapItems {
+	  $classPrefix: nth($item, 1);
+	  $property: nth($item, 2);
+	  $selectorAdditional: nth($item, 3);
+	
+	  @each $gapName, $gapValue in $gapsWithZero {
+		.#{$classPrefix}#{$gapName} #{$selectorAdditional}{
+		  #{$property}: $gapValue;
+		}
+	  }
+	  @each $breakpointName, $width in $breakpoints {
+		@include respond($breakpointName) {
+		  @each $gapName, $gapValue in $gapsWithZero {
+			.#{$breakpointName}\:#{$classPrefix}#{$gapName} #{$selectorAdditional} {
+			  #{$property}: $gapValue;
+			}
+		  }
+		}
+	  }
+	}
+  }
+  
