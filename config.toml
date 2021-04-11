@@ -2,3 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
 theme = "base"
+[params]
+  author = "Who Are You?"
+  description = "Describe the site for search engines!"
+  keywords = "Being great, eating food."
