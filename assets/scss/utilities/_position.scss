@@ -1,34 +1,13 @@
-$positionOptions: (
-  'static',
-  'relative',
-  'absolute',
-  'fixed',
-  'sticky'
+$properties: (
+  ('', 'position', ''),
 );
 
-@each $positionOption in $positionOptions {
-  .#{$positionOption} {
-    position: #{$positionOption};
-  }
-}
-
-
-$directions: (
-  'top',
-  'right',
-  'bottom',
-  'left',
-);
-$positions: (
-  0,
-  50,
-  100
+$options: (
+  static: static,
+  relative: relative,
+  absolute: absolute,
+  fixed: fixed,
+  sticky: sticky
 );
 
-@each $position in $positions {
-  @each $direction in $directions {
-    .#{$direction}-#{$position} {
-      #{$direction}: #{$position};
-    }
-  }
-}
+@include generateUtilityClasses($properties, $options, false);

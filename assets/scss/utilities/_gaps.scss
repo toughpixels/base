@@ -1,43 +1,16 @@
-// space between items
-@each $name, $gap in $gaps {
-  .mt-#{$name} {
-    margin-top: $gap;
-  }
-  .mb-#{$name} {
-    margin-bottom: $gap;
-  }
-}
-
-$responsiveGapItems: (
-  ("ml-", "margin-left", ""),
-  ("p-", "padding", ''),
-  ("space-y-", "margin-top", '> * + *'),
-  ("space-x-", "margin-left", '> * + *')
+$options: (
+  '0'  : 0px,
+  'xs' : 0.5rem,
+  'sm' : 1rem,
+  'md' : 2rem
 );
 
+$properties: (
+  ('p-', 'padding', ''),
+  ('mt-', 'margin-top', ''),
+  ('mb-', 'margin-bottom', ''),
+  ('space-y-', 'margin-top', '> * + *'),
+  ('space-x-', 'margin-left', '> * + *')
+);
 
-@include generateResponsiveUtilityClasses($responsiveGapItems, $gapsWithZero);
-
-.space-y {
-  &-lead {
-    @include space-y(3rem);
-  }
-}
-.mb-header {
-  margin-bottom: 3rem;
-  @include respond(sm) {
-    margin-bottom: 5rem;
-  }
-}
-
-.xs\:p-x-0 {
-  @include respond(xs) {
-    padding: 0;
-  }
-}
-
-.xs\:w-100 {
-  @include respond(xs) {
-    width: 100%;
-  }
-}
+@include generateUtilityClasses($properties, $options, true);

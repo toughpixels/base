@@ -1,17 +1,20 @@
-$reponsiveDisplayOptions: (
-  none,
-  block,
-  flex
+$properties: (
+  ('', 'display', ''),
 );
-@each $displayOption in $reponsiveDisplayOptions {
-  @include responsiveOptions('', $displayOption, 'display', $displayOption);
-}
 
-$displayOptions: (
-  inline,
-  inline-block,
-  grid
+$options: (
+  inline-block: inline-block,
+  flex: flex,
+  grid: grid
 );
-@each $displayOption in $displayOptions {
-  @include simpleOptions('', $displayOption, 'display', $displayOption);
-}
+
+@include generateUtilityClasses($properties, $options, false);
+
+$options: (
+  none: none,
+  block: block,
+);
+
+@include generateUtilityClasses($properties, $options, true);
+
+
