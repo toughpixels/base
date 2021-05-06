@@ -1,8 +1,8 @@
-baseURL = "http://example.org/"
+baseURL = "http://example.com"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = ""
 theme = "base"
-[params]
-  author = "Who Are You?"
-  description = "Describe the site for search engines!"
-  keywords = "Being great, eating food."
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
