@@ -6,7 +6,7 @@
     <meta name="keywords" content="{{  .Params.keywords }}">
     <meta name="author" content="{{  .Params.author }}">
     {{ template "_internal/opengraph.html" . }}
-    {{- partial "vitalcss.html" -}}
-    {{- partial "latercss.html" -}}
+    {{- partial "vitalcss.html" . -}}
+    {{- partial "latercss.html" . -}}
     {{- partial "favicons.html" . -}}
 </head>
