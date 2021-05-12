@@ -1,8 +1,0 @@
-baseURL = "http://example.com"
-languageCode = "en-us"
-title = ""
-theme = "base"
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-      unsafe = true

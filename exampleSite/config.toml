@@ -1,0 +1,14 @@
+baseURL = "http://example.com"
+languageCode = "en-us"
+title = ""
+theme = "base"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+[params]
+  description = "A starter website for the Hugo framework."
+  title = "My Basic Website"
+  headerImage  = "images/header.png"
+  author = "Tough Pixels"
+

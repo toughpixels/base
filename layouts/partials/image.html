@@ -17,7 +17,7 @@
     {{- range $sizes -}}
         {{- $size := . -}}
         {{- range $formats -}}
-            {{- $sized_image := $image.Resize (print $size "x " .  $rotation) -}}
+            {{- $sized_image := $image.Fit (print $size "x" $size " " .  $rotation) -}}
             {{- if and (eq $size (index $sizes -1)) (eq . (index $formats -1)) -}}
                 {{- $defaultImage = $sized_image -}}
             {{- else -}}

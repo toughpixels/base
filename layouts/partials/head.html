@@ -1,7 +1,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ block "title" . }}{{ if .Title }}{{ .Title }} | {{ end }}{{end }}{{ .Site.Title }}</title>
+    <title>{{ .Param .Title }}</title>
     <meta name="description" content="{{ .Params.description }}">
     <meta name="keywords" content="{{  .Params.keywords }}">
     <meta name="author" content="{{  .Params.author }}">
@@ -9,5 +9,4 @@
     {{- partial "vitalcss.html" . -}}
     {{- partial "latercss.html" . -}}
     {{- partial "favicons.html" . -}}
-    {{- partial "netlify-identity.html" . -}}
 </head>

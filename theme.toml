@@ -1,0 +1,12 @@
+name = "Introduction"
+license = "Apache-2.0"
+licenselink = "https://github.com/toughpixels/base/blob/master/LICENSE"
+description = "Starter theme for sites optimized for speed and acessability.."
+homepage = "https://github.com/toughpixels/base"
+tags = ["blog" ]
+features = ["blog"]
+min_version = "0.83"
+
+[author]
+  name = "Tough Pixels"
+  homepage = "https://toughpixels.com"
