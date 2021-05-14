@@ -12,7 +12,12 @@ Very basic starter theme for client sites.
 1. Update projects that have base installed
    * `git submodule update --init --recursive`
    * `git submodule update --remote --merge`
+1. To run a preview site for the theme, run
+* `cd themes/base/exampleSite/
+* `hugo serve --themesDir ../..`
 
+
+Thanks to [Victoria Drake](https://github.com/victoriadrake/hugo-theme-introduction) for the amazing model.
 
 # Project Finish
 
