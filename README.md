@@ -6,8 +6,8 @@ Very basic starter theme for client sites.
 
 1. Make a GitHub repo with the name of the client's site, we're using the example `website`.
     * `hugo new site website`  
-    * `git init`  
     * `cd website`
+    * `git init`  
     * `git submodule add https://github.com/toughpixels/base.git themes/base`
 1. Update projects that have base installed
    * `git submodule update --init --recursive`
