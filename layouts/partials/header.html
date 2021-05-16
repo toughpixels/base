@@ -1,1 +1,3 @@
-{{ partial "image.html" (resources.Get (.Param "headerImage")) }}
+{{ with .Param "headerImage" }}
+  {{ partial "image.html" (resources.Get (.Param "headerImage")) }}
+{{ end }}
