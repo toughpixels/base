@@ -1,3 +1,6 @@
 {{ with .Param "headerImage" }}
-  {{ partial "image.html" (resources.Get (.Param "headerImage")) }}
+  <div class="flex">
+    <div style="max-width: 100px">{{ partial "image.html" (resources.Get .) }}</div>
+    <div class="ml-sm">Useful</div>
+  </div>
 {{ end }}

@@ -13,7 +13,7 @@ Very basic starter theme for client sites.
    * `git submodule update --init --recursive`
    * `git submodule update --remote --merge`
 1. To run a preview site for the theme, run
-* `cd themes/base/exampleSite/
+* `cd themes/base/exampleSite/`
 * `hugo serve --themesDir ../..`
 
 
