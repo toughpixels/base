@@ -1,4 +1,4 @@
 {{ $options := (dict "outputStyle" "compressed") }}
-{{- $main := resources.Get "scss/vital.scss" | toCSS $options }}
+{{- $main := resources.Get "scss/vital.scss" | toCSS }}
 {{- $loadfirst := $main.Content | safeCSS }}
 <style type="text/css">{{- $loadfirst -}}</style> 

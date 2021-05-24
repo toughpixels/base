@@ -5,14 +5,9 @@ $properties: (
 $options: (
   inline-block: inline-block,
   flex: flex,
-  grid: grid
-);
-
-@include generateUtilityClasses($properties, $options, false);
-
-$options: (
+  grid: grid,
   none: none,
-  block: block,
+  block: block
 );
 
 @include generateUtilityClasses($properties, $options, true);

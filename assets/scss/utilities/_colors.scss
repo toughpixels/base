@@ -1,11 +1,7 @@
-$options: (
-  light: #fafafa,
-  dark: #030303,
-  primary: #9100b6
-);
+
 $properties: (
     ('bg-', 'background-color', ''),
     ('c-', 'color', '')
 );
 
-@include generateUtilityClasses($properties, $options, false);
+@include generateUtilityClasses($properties, $colors, false);
