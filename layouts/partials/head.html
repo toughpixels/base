@@ -5,7 +5,7 @@
     <meta name="description" content="{{ .Param "description" }}">
     <meta name="keywords" content="{{  .Param "keywords" }}">
     <meta name="author" content="{{  .Param "author" }}">
-    {{ template "_internal/opengraph.html" . }
+    {{ template "_internal/opengraph.html" . }}
     {{- partial "vitalcss.html" . -}}
     {{- partial "latercss.html" . -}}
     {{- partial "favicons.html" . -}}
