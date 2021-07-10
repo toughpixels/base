@@ -11,8 +11,8 @@ Very basic starter theme for client sites.
     * `git submodule add https://github.com/toughpixels/base.git themes/base`
     * Update the `config.toml` file and add this line: `theme = "base"`  
 1. Update projects that have base installed
-   * `git submodule update --init --recursive`
-   * `git submodule update --remote --merge`
+   * `cd themes/base` 
+   * `git pull origin main`
 1. To run a preview site for the theme, run
 * `cd themes/base/exampleSite/`
 * `hugo serve --themesDir ../..`
