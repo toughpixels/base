@@ -1,6 +1,6 @@
 name = "Introduction"
 license = "Apache-2.0"
-licenselink = "https://github.com/toughpixels/base/blob/master/LICENSE"
+licenselink = "https://github.com/toughpixels/base/blob/main/LICENSE"
 description = "Starter theme for sites optimized for speed and acessability.."
 homepage = "https://github.com/toughpixels/base"
 tags = ["blog" ]
