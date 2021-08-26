@@ -14,7 +14,7 @@ Very basic starter theme for client sites.
    * `cd themes/base` 
    * `git pull origin main`
 1. To run a preview site for the theme, run
-* `cd themes/base/exampleSite/`
+* `cd exampleSite/`
 * `hugo serve --themesDir ../..`
 
 
