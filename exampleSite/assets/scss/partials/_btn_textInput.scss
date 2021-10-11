@@ -1,0 +1,46 @@
+
+%btn-base {
+    border-width: 2px;
+    border-style: solid;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    max-width: 100%;
+}
+%btn-on {
+    background: lighten(color(primary), 0.2);
+}
+%btn-off {
+    background: color(primary);
+}
+.btn {
+    @extend %btn-base;
+    @extend %btn-off;
+    font-weight: bold;
+    display: inline-block;
+    @include respond(sm) {
+       @include px(2rem);
+    }
+    &:hover, &:focus {
+        @extend %btn-on;
+    }
+}
+.textInput, select {
+    @extend %btn-base;
+    width: 100%;
+    display: block;
+}
+
+select {
+    -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+
+  ::-ms-expand {
+    display: none;
+  }
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) 50%;
+  background-size: 1rem;
+  padding-right: 2rem;
+}

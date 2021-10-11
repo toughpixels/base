@@ -1,9 +1,20 @@
+{{- $sizes := split (default (.Param "imageSizes") (.Scratch.Get "imageSizes")) " " -}}
+{{- $formats := split (default (.Param "imageFormats") (.Scratch.Get "imageFormats")) " " -}}
+{{- $page  := . -}}
+{{ with .Param "image" }}
 <picture>
+<<<<<<< HEAD
     {{- $rotation := "" -}}
     {{- $image  := . -}}
     {{ $sizes := default (slice "1280" "768" "640" "320") .Param "imageSizes"}}
     {{ $formats := default (slice "webp" "jpeg") .Param "imageFormats"}}
+=======
+    {{- $pageImage := $page.Resources.GetMatch . -}}
+    {{- $assetImage := resources.Get . -}}
+    {{- $image := default $assetImage $pageImage -}}
+>>>>>>> e7d31e600ab8757039382136c014779da39025d3
     {{- $defaultImage := $image -}}
+    {{- $rotation := "" -}}
     {{- with $image.Exif -}}
         {{- $orientation  := .Tags.Orientation -}}
         {{- if in (slice 3 4) $orientation -}}
@@ -31,3 +42,4 @@
     {{- end -}}
     <img src="{{ $defaultImage.RelPermalink }}" loading="lazy" alt="{{ $image.Title }}">
 </picture>
+{{ end }}
