@@ -1,8 +1,8 @@
 <picture>
     {{- $rotation := "" -}}
     {{- $image  := . -}}
-    {{- $sizes := slice "1280" "640" "340" -}}
-    {{- $formats := slice "webp" "jpeg" -}}
+    {{ $sizes := default (slice "1280" "768" "640" "320") .Param "imageSizes"}}
+    {{ $formats := default (slice "webp" "jpeg") .Param "imageFormats"}}
     {{- $defaultImage := $image -}}
     {{- with $image.Exif -}}
         {{- $orientation  := .Tags.Orientation -}}
