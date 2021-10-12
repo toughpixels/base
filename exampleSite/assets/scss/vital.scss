@@ -1,42 +1,42 @@
 // tailwindcss reset
-@import "../../themes/base/assets/scss/partials/reset";
+@import "assets/scss/partials/reset";
 
 
 // fancy mixins
 // for any mixin defined in "themes/base" you want to use: create an equivalent project-level partial and add the associated include statement in that
-@import "../../themes/base/assets/scss/mixins/generateUtilityClasses";
-@import "../../themes/base/assets/scss/partials/generateContainerAndEdgeClasses";
-@import "../../themes/base/assets/scss/partials/svg-uri";
+@import "assets/scss/mixins/generateUtilityClasses";
+@import "assets/scss/partials/generateContainerAndEdgeClasses";
+@import "assets/scss/partials/svg-uri";
 
 // other basics
-@import "../../themes/base/assets/scss/partials/smoothscroll";
+@import "assets/scss/partials/smoothscroll";
 
 // common project-specific vars
 @import "partials/colors";
 @import "partials/breakpoints";
-@import "../../themes/base/assets/scss/mixins/respond";
+@import "assets/scss/mixins/respond";
 @import "partials/gaps";
 @import "partials/grid";
 
 
 
 // functions
-@import "../../themes/base/assets/scss/mixins/color";
-@import "../../themes/base/assets/scss/mixins/gap";
+@import "assets/scss/mixins/color";
+@import "assets/scss/mixins/gap";
 
 // quick mixins
-@import "../../themes/base/assets/scss/mixins/px";
-@import "../../themes/base/assets/scss/mixins/py";
-@import "../../themes/base/assets/scss/mixins/mx";
-@import "../../themes/base/assets/scss/mixins/space";
+@import "assets/scss/mixins/px";
+@import "assets/scss/mixins/py";
+@import "assets/scss/mixins/mx";
+@import "assets/scss/mixins/space";
 
 
 
 
 // basic utility classes
-@import "../../themes/base/assets/scss/partials/sr-only";
-@import "../../themes/base/assets/scss/partials/icon";
-@import "../../themes/base/assets/scss/partials/darkBg";
+@import "assets/scss/partials/sr-only";
+@import "assets/scss/partials/icon";
+@import "assets/scss/partials/darkBg";
 
 
 // common project-specific styles
@@ -48,11 +48,11 @@
 
 
 // sometimes useful
-@import "../../themes/base/assets/scss/partials/tabs";
+@import "assets/scss/partials/tabs";
 
 // later
-@import "../../themes/base/assets/scss/utilities/colors";
-@import "../../themes/base/assets/scss/utilities/display";
-@import "../../themes/base/assets/scss/utilities/position";
-@import "../../themes/base/assets/scss/partials/fill";
-@import "../../themes/base/assets/scss/partials/flex";
+@import "assets/scss/utilities/colors";
+@import "assets/scss/utilities/display";
+@import "assets/scss/utilities/position";
+@import "assets/scss/partials/fill";
+@import "assets/scss/partials/flex";

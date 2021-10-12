@@ -1,6 +1,0 @@
-.py-section {
-    @include py(2rem);
-    @include respond(sm) {
-        @include py(3rem);
-    }
-}

@@ -3,16 +3,9 @@
 {{- $page  := . -}}
 {{ with .Param "image" }}
 <picture>
-<<<<<<< HEAD
-    {{- $rotation := "" -}}
-    {{- $image  := . -}}
-    {{ $sizes := default (slice "1280" "768" "640" "320") .Param "imageSizes"}}
-    {{ $formats := default (slice "webp" "jpeg") .Param "imageFormats"}}
-=======
     {{- $pageImage := $page.Resources.GetMatch . -}}
     {{- $assetImage := resources.Get . -}}
     {{- $image := default $assetImage $pageImage -}}
->>>>>>> e7d31e600ab8757039382136c014779da39025d3
     {{- $defaultImage := $image -}}
     {{- $rotation := "" -}}
     {{- with $image.Exif -}}
