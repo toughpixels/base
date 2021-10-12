@@ -1,0 +1,25 @@
+@mixin generateUtilityClasses($properties, $options, $responsive: false) {
+	@each $item in $properties {
+	  $classPropertyText: nth($item, 1);
+	  $cssProperty: nth($item, 2);
+	  $selectorAdditional: nth($item, 3);
+  
+	  @each $classValueText, $cssValue in $options {
+		.#{$classPropertyText}#{$classValueText} #{$selectorAdditional} {
+		  #{$cssProperty}: $cssValue;
+		}
+	  }
+	  @if($responsive) {
+		@each $breakpointName, $width in $breakpoints {
+		  @include respond($breakpointName) {
+			@each $classValueText, $cssValue in $options {
+			  .#{$breakpointName}\:#{$classPropertyText}#{$classValueText} #{$selectorAdditional} {
+				#{$cssProperty}: $cssValue;
+			  }
+			}
+		  }
+		}
+	  }
+	}
+  }
+  

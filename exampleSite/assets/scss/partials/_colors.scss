@@ -1,0 +1,171 @@
+$colors: (
+  primary: rgb(37, 59, 180),
+);
+
+@mixin selectChevronColor($color) {
+    background-image: svg-uri('<svg viewBox="0 0 28 28" fill="#{$color}"><path d="M26.297 12.625l-11.594 11.578c-0.391 0.391-1.016 0.391-1.406 0l-11.594-11.578c-0.391-0.391-0.391-1.031 0-1.422l2.594-2.578c0.391-0.391 1.016-0.391 1.406 0l8.297 8.297 8.297-8.297c0.391-0.391 1.016-0.391 1.406 0l2.594 2.578c0.391 0.391 0.391 1.031 0 1.422z"></path></svg>');
+}
+
+// call any color in your palate quickly!
+// ex. color(primary)
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+*:focus {
+  outline-style: dashed;
+  outline-width: 2px;
+  outline-offset: 2px;
+}
+a {
+  text-decoration: underline;
+}
+
+@mixin generateThemeSection(
+  $bg,
+  $text,
+  $offBg,
+  $primary,
+  $primaryBgBlend,
+  $primaryBgContrast
+) {
+  background-color: $bg;
+  color: $text;
+
+  *:focus {
+    outline-color: $primary;
+  }
+  a {
+    color: $primary;
+    &:hover,
+    &:focus {
+      background-color: $primary;
+      color: $bg;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label:focus-within span.label {
+    color: $primaryBgContrast;
+  }
+  .btn-primary {
+    background-color: $primary;
+    border-color: $primary;
+    color: $bg;
+    &:hover,
+    &:focus {
+      background-color: $primaryBgContrast;
+      border-color: $primaryBgContrast;
+    }
+  }
+  .btn-secondary {
+    background-color: $bg;
+    color: $primary;
+    border-color: $primary;
+    &:hover,
+    &:focus {
+      color: $primaryBgContrast;
+      border-color: $primaryBgContrast;
+      background-color: $bg;
+    }
+  }
+  .textInput,
+  select {
+
+    &:hover,
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 3px $primaryBgContrast;
+    }
+  }
+
+  .bg-off {
+    background-color: $offBg;
+  }
+  .bg-highlight {
+    background-color: $primaryBgBlend;
+  }
+}
+@mixin generateTheme(
+  $lightBg: #fff,
+  $lightBgText: #020202,
+  $lightBgOff: lighten(color(primary), 50%),
+  $lightBgPrimary: color(primary),
+  $lightBgPrimaryBlend: lighten(color(primary), 38%),
+  $lightBgPrimaryContrast: darken(color(primary), 15%),
+
+  $darkBg: darken(color(primary), 35%),
+  $darkBgText: $lightBg,
+  $darkBgOff: darken(color(primary), 30%),
+  $darkBgPrimary: lighten(color(primary), 30%),
+  $darkBgPrimaryBlend: darken(color(primary), 20%),
+  $darkBgPrimaryContrast: lighten(color(primary), 45%)
+) {
+  :root {
+    --lightBg: #{$lightBg};
+    --lightBgText: #{$lightBgText};
+    --lightBgOff: #{$lightBgOff};
+    --lightBgPrimary: #{$lightBgPrimary};
+    --lightBgPrimaryBlend: #{$lightBgPrimaryBlend};
+    --lightBgPrimaryContrast: #{$lightBgPrimaryContrast};
+
+    --darkBg: #{$darkBg};
+    --darkBgText: #{$darkBgText};
+    --darkBgOff: #{$darkBgOff};
+    --darkBgPrimary: #{$darkBgPrimary};
+    --darkBgPrimaryBlend: #{$darkBgPrimaryBlend};
+    --darkBgPrimaryContrast: #{$darkBgPrimaryContrast};
+  }
+  .textInput,
+  select {
+    border-color: rgba(var(--lightBgText), 0.5);
+    color: var(--lightBgText);
+    background: var(--lightBg)
+
+  }
+  select {
+    @include selectChevronColor($lightBgText);
+    &:focus {
+        @include selectChevronColor($lightBgPrimary);
+      }
+  }
+  .bg {
+    &-light {
+      @include generateThemeSection(
+        var(--lightBg),
+        var(--lightBgText),
+        var(--lightBgOff),
+        var(--lightBgPrimary),
+        var(--lightBgPrimaryBlend),
+        var(--lightBgPrimaryContrast)
+      );
+    }
+    &-dark {
+      @include generateThemeSection(
+        var(--darkBg),
+        var(--darkBgText),
+        var(--darkBgOff),
+        var(--darkBgPrimary),
+        var(--darkBgPrimaryBlend),
+        var(--darkBgPrimaryContrast)
+      );
+    }
+  }
+}
+@include generateTheme();
+
+// if you want to create individual color utility classes:
+
+// $properties: (
+//     ('bg-', 'background-color', ''),
+//     ('c-', 'color', '')
+// );
+// @include generateUtilityClasses($properties, $colors, false);
