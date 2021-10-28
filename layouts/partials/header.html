@@ -1,22 +1,17 @@
-{{ with .Param "headerImage" }}
-  {{/* partial "image.html" (resources.Get .) */}}
-{{ end }}
-
 <header class="siteHeader flex justify-between">
   {{ $tag := "span" }}
   {{ if .IsHome }}
   {{ $tag = "h1" }}
   {{ end }}
   <a href="{{ .Site.BaseURL }}" class="headerLink">
-  
       {{print "<" | safeHTML }}{{ $tag }} class="sr-only">{{ .Site.Title }}{{print "<" | safeHTML }}/{{ $tag }}>
       <span class="logoIcon">
           {{- partial "logo.html" . -}}
       </span>
-  
+
   </a>
-  
-  
+
+
   <button aria-label="Open site navigation" type="button" class="link headerLink" data-toggle-class data-toggle-class-on-target data-toggle-escape data-toggle-modal data-toggle-target="#siteNavLightbox, body">
       <span class="mobileMenuIcon is-bars"><span></span><span></span><span></span></span>
   </button>

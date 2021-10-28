@@ -1,5 +1,3 @@
-
-
 <div
 id="siteNavLightbox"
 class="lightbox"
@@ -21,9 +19,8 @@ aria-hidden="true">
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
     {{ $page := $.Site.GetPage .URL }}
-    {{ if $page.Parent.IsHome }}
             <li>
-                
+
                 <div class="flex">
                 <a class="flex-1 {{ if $currentPage.IsMenuCurrent "main" . }}active {{ end }}" href="{{ .URL }}">
                     {{ .Pre }}
@@ -42,24 +39,13 @@ data-toggle-target="#nav-{{ .Name | urlize }}-items">
 </button>
 
 
-                {{ end }}
                 </div>
-                
-                {{ if $page.Sections }}
-                
-    
-                <ul class="openable" role="region" aria-labelledby="nav-{{ .Name | urlize }}-items-trigger" aria-hidden="true" id="nav-{{ .Name | urlize }}-items">
-                {{ range $page.Sections }}
-<li><a href="{{ .Permalink }}" class="{{ if eq $currentPage.Permalink .Permalink }}active{{ end }}">{{ .Title }}</a></li>
-{{ end }}
-</ul>
-{{ end }}
-                
+
             </li>
             {{ end }}
             {{ end }}
-            
-    
+
+
 </ul>
 </nav>
 
