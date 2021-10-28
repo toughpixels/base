@@ -8,7 +8,7 @@ Very basic starter theme for client sites.
     * `hugo new site website`  
     * `cd website`
     * `git init`  
-    * `git submodule add https://github.com/toughpixels/base.git themes/base`
+    * `git submodule add git@github.com:toughpixels/base.git themes/base`
     * Copy the example site to your project directory: `cp -r themes/base/exampleSite/* .`
 1. Update projects that have base installed
    * `cd themes/base` 
