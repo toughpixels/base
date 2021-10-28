@@ -1,14 +1,12 @@
-// fill the available space
+.flex {
+    display: flex;
+}
 .flex-1 {
     flex: 1 1 0;
 }
-.direction {
-    &-column {
-        flex-direction: column;
-    }
+.direction-column {
+    flex-direction: column;
 }
-// if the flex-direction is "row" (default)
-// "align" is vertical alignment and "justify" is horizontal alignment
 .align {
     &-start {
         align-items: flex-start;
@@ -27,13 +25,16 @@
     &-center {
         justify-content: center;
     }
+    &-between {
+        justify-content: space-between;
+    }
     &-end {
         justify-content: flex-end;
     }
 }
 
-.sm\:row-reverse {
-    @include respond(sm) {
+.sm-row-reverse {
+    @media screen and (min-width: var(--sm)) {
         flex-direction: row-reverse;
     }
 }

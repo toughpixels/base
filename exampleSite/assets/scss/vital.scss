@@ -1,58 +1,13 @@
-// tailwindcss reset
 @import "assets/scss/partials/reset";
+@import "assets/scss/partials/sr-only";
 
-
-// fancy mixins
-// for any mixin defined in "themes/base" you want to use: create an equivalent project-level partial and add the associated include statement in that
-@import "assets/scss/mixins/generateUtilityClasses";
-@import "assets/scss/partials/generateContainerAndEdgeClasses";
-@import "assets/scss/partials/svg-uri";
-
-// other basics
-@import "assets/scss/partials/smoothscroll";
-
-// common project-specific vars
 @import "partials/colors";
 @import "partials/breakpoints";
-@import "assets/scss/mixins/respond";
-@import "partials/gaps";
-@import "partials/grid";
-
-
-
-// functions
-@import "assets/scss/mixins/color";
-@import "assets/scss/mixins/gap";
-
-// quick mixins
-@import "assets/scss/mixins/px";
-@import "assets/scss/mixins/py";
-@import "assets/scss/mixins/mx";
-@import "assets/scss/mixins/space";
-
-
-
-
-// basic utility classes
-@import "assets/scss/partials/sr-only";
-@import "assets/scss/partials/icon";
-@import "assets/scss/partials/darkBg";
-
-
-// common project-specific styles
+@import "partials/padding";
+@import "partials/margin";
 @import "partials/text";
-@import "partials/py-section";
 @import "partials/container";
-@import "partials/label";
-@import "partials/btn_textInput";
-
-
-// sometimes useful
-@import "assets/scss/partials/tabs";
-
-// later
-@import "assets/scss/utilities/colors";
-@import "assets/scss/utilities/display";
-@import "assets/scss/utilities/position";
-@import "assets/scss/partials/fill";
 @import "assets/scss/partials/flex";
+
+@import "partials/btn_textInput";
+@import "partials/mobileMenuIcon";
