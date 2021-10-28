@@ -32,8 +32,8 @@
     }
 }
 
-.sm\:row-reverse {
-    @include respond(sm) {
+.row-reverse-sm {
+     @media screen and (max-width: var(--sm)) {
         flex-direction: row-reverse;
     }
 }
