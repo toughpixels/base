@@ -1,0 +1,13 @@
+.px-sm {
+  padding: 0 1rem;
+}
+.p-sm {
+  padding: 1rem;
+}
+
+.py-sm {
+  padding: 1rem 0;
+  @media screen and (--sm) {
+    padding: 2rem 0;
+  }
+}

@@ -1,7 +1,0 @@
-
-$properties: (
-    ('bg-', 'background-color', ''),
-    ('c-', 'color', '')
-);
-
-@include generateUtilityClasses($properties, $colors, false);

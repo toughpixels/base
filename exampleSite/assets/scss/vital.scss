@@ -1,5 +1,5 @@
-@import "assets/scss/partials/reset";
-@import "assets/scss/partials/sr-only";
+@import "partials/reset";
+@import "partials/sr-only";
 
 @import "partials/colors";
 @import "partials/breakpoints";
@@ -7,7 +7,7 @@
 @import "partials/margin";
 @import "partials/text";
 @import "partials/container";
-@import "assets/scss/partials/flex";
+@import "partials/flex";
 
 @import "partials/btn_textInput";
 @import "partials/mobileMenuIcon";
