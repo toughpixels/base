@@ -1,7 +1,8 @@
 {{- $sizes := split (default (.Param "imageSizes") (.Scratch.Get "imageSizes")) " " -}}
 {{- $formats := split (default (.Param "imageFormats") (.Scratch.Get "imageFormats")) " " -}}
 {{- $page  := . -}}
-{{ with .Params.image }}
+{{- $image := default (.Scratch.Get "image") (.Params.image) -}}
+{{ with $image }}
 <picture>
     {{- $pageImage := $page.Resources.GetMatch . -}}
     {{- $assetImage := resources.Get . -}}
