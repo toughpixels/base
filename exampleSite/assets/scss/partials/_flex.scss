@@ -1,4 +1,6 @@
-// fill the available space
+.flex {
+    display: flex;
+}
 .flex-1 {
     flex: 1 1 0;
 }
@@ -7,8 +9,6 @@
         flex-direction: column;
     }
 }
-// if the flex-direction is "row" (default)
-// "align" is vertical alignment and "justify" is horizontal alignment
 .align {
     &-start {
         align-items: flex-start;
@@ -32,8 +32,8 @@
     }
 }
 
-.sm\:row-reverse {
-    @include respond(sm) {
+.row-reverse-sm {
+     @media screen and (max-width: var(--sm)) {
         flex-direction: row-reverse;
     }
 }

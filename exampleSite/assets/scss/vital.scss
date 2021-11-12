@@ -1,58 +1,13 @@
-// tailwindcss reset
-@import "../../themes/base/assets/scss/partials/reset";
+@import "partials/reset";
+@import "partials/sr-only";
 
-
-// fancy mixins
-// for any mixin defined in "themes/base" you want to use: create an equivalent project-level partial and add the associated include statement in that
-@import "../../themes/base/assets/scss/mixins/generateUtilityClasses";
-@import "../../themes/base/assets/scss/partials/generateContainerAndEdgeClasses";
-@import "../../themes/base/assets/scss/partials/svg-uri";
-
-// other basics
-@import "../../themes/base/assets/scss/partials/smoothscroll";
-
-// common project-specific vars
 @import "partials/colors";
 @import "partials/breakpoints";
-@import "../../themes/base/assets/scss/mixins/respond";
-@import "partials/gaps";
-@import "partials/grid";
-
-
-
-// functions
-@import "../../themes/base/assets/scss/mixins/color";
-@import "../../themes/base/assets/scss/mixins/gap";
-
-// quick mixins
-@import "../../themes/base/assets/scss/mixins/px";
-@import "../../themes/base/assets/scss/mixins/py";
-@import "../../themes/base/assets/scss/mixins/mx";
-@import "../../themes/base/assets/scss/mixins/space";
-
-
-
-
-// basic utility classes
-@import "../../themes/base/assets/scss/partials/sr-only";
-@import "../../themes/base/assets/scss/partials/icon";
-@import "../../themes/base/assets/scss/partials/darkBg";
-
-
-// common project-specific styles
+@import "partials/padding";
+@import "partials/margin";
 @import "partials/text";
-@import "partials/py-section";
 @import "partials/container";
-@import "partials/label";
+@import "partials/flex";
+
 @import "partials/btn_textInput";
-
-
-// sometimes useful
-@import "../../themes/base/assets/scss/partials/tabs";
-
-// later
-@import "../../themes/base/assets/scss/utilities/colors";
-@import "../../themes/base/assets/scss/utilities/display";
-@import "../../themes/base/assets/scss/utilities/position";
-@import "../../themes/base/assets/scss/partials/fill";
-@import "../../themes/base/assets/scss/partials/flex";
+@import "partials/mobileMenuIcon";

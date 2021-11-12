@@ -1,0 +1,42 @@
+<div
+id="siteNavLightbox"
+class="lightbox"
+role="dialog"
+aria-hidden="true">
+    <div class="flex justify-end">
+    <button
+        type="button"
+        class="link headerLink"
+        data-toggle-trigger-off
+        aria-label="Close site navigation">
+        <span class="mobileMenuIcon is-x"><span></span><span></span><span></span></span>
+    </button>
+    </div>
+    <nav class="siteNav">
+    <ul class="">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+        {{ $page := $.Site.GetPage .URL }}
+                <li>
+                    <div class="flex">
+                    <a class="flex-1 {{ if $currentPage.IsMenuCurrent "main" . }}active {{ end }}" href="{{ .URL }}">
+                        {{ .Pre }}
+                        <span>{{ .Name }}</span>
+                    </a>
+                    {{ if $page.Sections }}
+                    <button
+    type="button"
+    id="nav-{{ .Name | urlize }}-items-trigger"
+    class="navToggleBtn p-sm py-0 link bg-lightBgOff"
+    data-toggle-class="is-open"
+    data-toggle-target="#nav-{{ .Name | urlize }}-items">
+    <span class="sr-only">Toggle {{ .Name }} Items</span>
+    <span class="toggleRotate">&#10095;</span>
+    </button>
+                    </div>
+                </li>
+                {{ end }}
+                {{ end }}
+    </ul>
+    </nav>
+</div>

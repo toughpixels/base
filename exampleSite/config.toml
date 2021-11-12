@@ -11,6 +11,5 @@ theme = "base"
   title = "My Basic Website"
   headerImage  = "images/header.png"
   author = "Tough Pixels"
-  imageSizes = "1280 640"
+  imageSizes = "1280 768 640 320"
   imageFormats = "webp jpeg"
-
