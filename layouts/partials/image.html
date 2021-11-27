@@ -3,9 +3,11 @@
 {{- $page  := . -}}
 {{ with .Param "image" }}
 <picture>
-    {{- $pageImage := $page.Resources.GetMatch . -}}
-    {{- $assetImage := resources.Get . -}}
-    {{- $image := default $assetImage $pageImage -}}
+    {{ with ($page.Resources.GetMatch .) }}
+        {{ $image := . }}
+    {{ else }}
+        {{ $image := resources.Get . }}
+    {{ end }}
     {{- $defaultImage := $image -}}
     {{- $rotation := "" -}}
     {{- with $image.Exif -}}
