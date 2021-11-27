@@ -1,6 +1,6 @@
 # Base Theme
 
-Very basic starter theme for client sites.
+Very basic starter theme for Hugo client sites.
 
 # Project Start
 
