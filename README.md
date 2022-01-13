@@ -5,11 +5,11 @@ Basic starter theme for Hugo client sites.
 # Project Start
 
 Make a GitHub repo with the name of the client's site, we're using the example `website`.
-    * `hugo new site website`  
-    * `cd website`
-    * `git init`  
-    * `git submodule add https://github.com:toughpixels/base.git themes/base`
-    * Copy the example site to your project directory: `cp -r themes/base/exampleSite/* .`
+- `hugo new site website`  
+- `cd website`
+- `git init`  
+- `git submodule add https://github.com:toughpixels/base.git themes/base`
+- Copy the example site to your project directory: `cp -r themes/base/exampleSite/* .`
 
 ## Editing Base
 
