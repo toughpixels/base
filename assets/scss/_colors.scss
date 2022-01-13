@@ -1,0 +1,9 @@
+:root {
+  --light: #fff;
+  --dark: darkblue;
+}
+
+.bg-dark {
+  color: var(--light);
+  background-color: var(--dark);
+}
