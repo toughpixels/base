@@ -1,14 +1,7 @@
 <header class="siteHeader flex justify-between">
-  {{ $tag := "span" }}
   <a href="{{ .Site.BaseURL }}" class="headerLink">
       <span class="logoIcon">
           {{- partial "logo.html" . -}}
       </span>
   </a>
-  <button aria-label="Open site navigation" type="button" class="link headerLink" data-toggle-class data-toggle-class-on-target data-toggle-escape data-toggle-modal data-toggle-target="#siteNavLightbox, body">
-      <span class="mobileMenuIcon is-bars"><span></span><span></span><span></span></span>
-  </button>
 </header>
-{{- partial "siteNav.html" . -}}
-{{/* https://twikito.github.io/easy-toggle-state/#lightbox */}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/easy-toggle-state/1.16.0/easy-toggle-state.min.js" integrity="sha512-hG7MyW8uOh26+C0KutsTVCJm8waH4iA9vSa8gOsosTHdIh6JjOE/MRn8vmcFg2rLGTnpVWmSKcDJF48cB89/3w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
