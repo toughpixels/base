@@ -1,5 +1,16 @@
-{{ $image  := .Get "src" }}
-{{ $alt := .Get "alt" }}
-{{ $title := .Get "title" }}
-{{ $page := . }}
-{{ partial "image.html" (resources.Get $image) }}
+{{ $image_info := (dict "src" (.Get "src")) }}
+{{ with .Get "alt" }}
+    {{ $image_info = merge $image_info (dict "alt" .) }}
+{{ end }}
+{{ with .Get "caption" }}
+    {{ $image_info = merge $image_info (dict "caption" .) }}
+{{ end }}
+{{ with .Get "caption" }}
+    {{ $image_info = merge $image_info (dict "caption" .) }}
+{{ end }}
+{{ with .Get "title" }}
+    {{ $image_info = merge $image_info (dict "title" .) }}
+{{ end }}
+{{ $image_info = merge $image_info (dict "page" .Page) }}
+
+{{ partial "image.html" $image_info }}

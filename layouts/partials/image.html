@@ -1,12 +1,11 @@
-{{- $sizes := split (default (.Param "imageSizes") ("1280 768 640 320")) " " -}}
-{{- $formats := split (default (.Param "imageFormats") ("webp jpeg")) " " -}}
-{{- $page  := .Get "page" -}}
-{{- $caption := .Get "caption" -}}
-{{- $title := .Get "title" -}}
-{{- $alt := .Get "alt" -}}
-{{ with .Get "src" }}
+{{- $info := . -}}
+{{- $page  := $info.page -}}
+{{- $sizes := split (default ("1280 768 640 320") ($page.Param "imageSizes")) " " -}}
+{{- $formats := split (default ("webp jpeg") ($page.Param "imageFormats")) " " -}}
+{{- $smallest_size  := index $sizes (sub (len $sizes) 1) -}}
+{{- $default_format := index $formats (sub (len $formats) 1) -}}
+{{ with $info.src }}
     {{ $image := false }}
-    {{ $smallest_image := false }}
     {{ with ($page.Resources.GetMatch .) }}
         {{ $image = . }}
     {{ else }}
@@ -15,6 +14,7 @@
     {{ with $image }}
         <figure>
             <picture>
+                {{ $smallest_image := false }}
                 {{- $rotation := "" -}}
                 {{- with $image.Exif -}}
                     {{- $orientation  := .Tags.Orientation -}}
@@ -26,11 +26,11 @@
                         {{ $rotation = " r90" }}
                     {{- end -}}
                 {{- end -}}
-                {{ if le .Width (index $sizes -1) }}
-                    {{ $smallest_image := $image.Resize (print ($image.Width "x " (index $formats -1) $rotation) }}
+                {{ if le .Width $smallest_size }}
+                    {{ $smallest_image = $image.Resize (print $image.Width "x " $default_format $rotation) }}
                     {{- range $formats -}}
                         {{ $format := . }}
-                        {{ $formatted_image  := $image.Resize (print (.Width "x " $format $rotation) }}
+                        {{ $formatted_image  := $image.Resize (print $image.Width "x " $format $rotation) }}
                         <source media="(min-width: {{$formatted_image.Width}}px)"
                             width="{{ $formatted_image.Width }}"
                             height="{{ $formatted_image.Height }}"
@@ -40,7 +40,7 @@
                 {{ else }}
                     {{- range $sizes -}}
                         {{- $size := . -}}
-                        {{ if lt ($size $image.Width) }}
+                        {{ if (lt $size $image.Width) }}
                             {{- range $formats -}}
                                 {{ $format := . }}
                                 {{- $sized_image := $image.Resize (print $size "x" " " $format $rotation) -}}
@@ -49,8 +49,8 @@
                                         height="{{ $sized_image.Height }}"
                                         srcset="{{ $sized_image.RelPermalink }}"
                                         type="{{ print "image/" $format }}" />
-                                {{ if and (eq $format index $formats -1) (eq $size index $sizes -1) }}
-                                    {{- $smallest_image := $sized_image -}}
+                                {{ if and (eq $format $default_format) (eq $size $smallest_size) }}
+                                    {{- $smallest_image = $sized_image -}}
                                 {{ end }}
                             {{- end -}}
                         {{ end }}
@@ -58,10 +58,10 @@
                 {{ end }}
                 <img src="{{ $smallest_image.RelPermalink }}"
                     loading="lazy"
-                    alt="{{ $alt }}"
-                    title="{{ $title }}">
-                {{ with $caption }}
-                    <figcaption>{{ $caption }}</figcaption>
+                    {{ with $info.alt }}alt="{{ . }}"{{ end }}
+                    {{ with $info.title }}title="{{ . }}"{{ end }}>
+                {{ with $info.caption }}
+                    <figcaption>{{ . }}</figcaption>
                 {{ end }}
             </picture>
         </figure>
