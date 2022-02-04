@@ -1,2 +1,5 @@
 {{ $image  := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $title := .Get "title" }}
+{{ $page := . }}
 {{ partial "image.html" (resources.Get $image) }}

@@ -1,3 +1,7 @@
-{{ with .Param "headerImage" }}
-  {{/* partial "image.html" (resources.Get .) */}}
-{{ end }}
+<header class="siteHeader flex justify-between">
+  <a href="{{ .Site.BaseURL }}" class="headerLink" aria-label="Home">
+      <span class="logoIcon">
+          {{- partial "logo.html" . -}}
+      </span>
+  </a>
+</header>

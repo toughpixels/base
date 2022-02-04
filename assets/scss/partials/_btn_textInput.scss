@@ -1,0 +1,15 @@
+.btn, .textInput, select {
+    border-width: 2px;
+    border-style: solid;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.2;
+}
+.btn {
+    display: inline-block;
+}
+.textInput, select {
+    width: 100%;
+    display: block;
+}

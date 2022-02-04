@@ -1,8 +1,0 @@
-@mixin respond($media) {
-	@each $name, $width in $breakpoints {
-		@if $media == $name {
-			@media (min-width: $width) { @content; }
-		}
-	}
-}
-  
