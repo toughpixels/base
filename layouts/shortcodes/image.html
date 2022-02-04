@@ -1,4 +1,5 @@
 {{ $image_info := (dict "src" (.Get "src")) }}
+{{ $image_info = merge $image_info (dict "page" .Page) }}
 {{ with .Get "alt" }}
     {{ $image_info = merge $image_info (dict "alt" .) }}
 {{ end }}
@@ -11,6 +12,4 @@
 {{ with .Get "title" }}
     {{ $image_info = merge $image_info (dict "title" .) }}
 {{ end }}
-{{ $image_info = merge $image_info (dict "page" .Page) }}
-
 {{ partial "image.html" $image_info }}
