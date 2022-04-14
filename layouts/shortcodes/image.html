@@ -6,9 +6,6 @@
 {{ with .Get "caption" }}
     {{ $image_info = merge $image_info (dict "caption" .) }}
 {{ end }}
-{{ with .Get "caption" }}
-    {{ $image_info = merge $image_info (dict "caption" .) }}
-{{ end }}
 {{ with .Get "title" }}
     {{ $image_info = merge $image_info (dict "title" .) }}
 {{ end }}
