@@ -1,6 +1,6 @@
 # Base Theme
 
-Basic starter theme for Hugo client sites.
+Basic starter theme for Hugo client sites. Make sure you have the [extended version of Hugo installed](https://gohugo.io/troubleshooting/faq/#i-get-tocss--this-feature-is-not-available-in-your-current-hugo-version) to take advantage of image resizing.
 
 # Project Start
 
