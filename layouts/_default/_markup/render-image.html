@@ -1,0 +1,9 @@
+{{ $image_info := (dict "src" .Destination) }}
+{{ $image_info = merge $image_info (dict "page" .Page) }}
+{{ with .Text }}
+    {{ $image_info = merge $image_info (dict "alt" .) }}
+{{ end }}
+{{ with .Title }}
+    {{ $image_info = merge $image_info (dict "title" .) }}
+{{ end }}
+{{ partial "image.html" $image_info }}
