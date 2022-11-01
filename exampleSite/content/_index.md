@@ -1,6 +1,6 @@
 ---
 title: Your Beautiful Site
 ---
-{{< image src="images/header.jpg" alt="Image Alt Text" title="Hoverable Title" caption="Image Caption" >}}
+![Alt Image Text](images/header.jpg)
 
 It's the seed of your site.
