@@ -2,10 +2,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>{{ .Param "title" }}</title>
+    {{- partial "favicons.html" . -}}
     <meta name="description" content="{{ .Param "description" }}">
     <meta name="keywords" content="{{  .Param "keywords" }}">
     <meta name="author" content="{{  .Param "author" }}">
     {{ template "_internal/opengraph.html" . }}
     {{- partial "vitalcss.html" . -}}
-    {{- partial "favicons.html" . -}}
+
 </head>
