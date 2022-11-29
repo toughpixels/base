@@ -1,3 +1,0 @@
-{{ $later := resources.Get "scss/later.scss" | toCSS | minify | fingerprint  }}
-<link rel="preload" href="{{ $later.Permalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'" />
-<noscript><link rel="stylesheet" href="{{ $later.Permalink }}" /></noscript>
