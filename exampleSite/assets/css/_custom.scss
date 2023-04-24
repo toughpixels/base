@@ -1,0 +1,16 @@
+body {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+html {
+    min-height: 100vh;
+    background-color: var(--light);
+}
+
+.container {
+    text-align: center;
+    max-width: 65ch;
+    padding: 0 1rem;
+}

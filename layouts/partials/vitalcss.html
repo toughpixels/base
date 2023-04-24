@@ -1,3 +1,0 @@
-{{- $main := resources.Get "scss/vital.scss" | toCSS | minify | fingerprint }}
-{{- $loadfirst := $main.Content | safeCSS }}
-<style type="text/css">{{- $loadfirst -}}</style>
