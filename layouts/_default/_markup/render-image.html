@@ -6,4 +6,4 @@
 {{ with .Title }}
     {{ $image_info = merge $image_info (dict "title" .) }}
 {{ end }}
-{{ partial "image.html" $image_info }}
+{{ partial "markdown-image-render.html" $image_info }}
