@@ -1,6 +1,6 @@
 ---
-title: Your Beautiful Site
+title: I love my website.
 ---
-![Alt Image Text](images/header.jpg)
+![Header Image Of Your Website](images/header.jpg)
 
-It's the seed of your site.
+It's the seed of your next website.

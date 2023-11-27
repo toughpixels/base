@@ -1,0 +1,13 @@
+.px-sm {
+  padding: 0 var(--small-gap);
+}
+.p-sm {
+  padding: var(--small-gap);
+}
+
+.py-sm {
+  padding: var(--small-gap) 0;
+  @media screen and (--sm) {
+    padding: var(--large-gap) 0;
+  }
+}

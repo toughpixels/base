@@ -1,0 +1,13 @@
+:root {
+    --small-gap: 1rem;
+    --medium-gap: 2rem;
+}
+
+.mx-auto {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.space-y-sm > * + * {
+    margin-top: var(--small-gap);
+}
