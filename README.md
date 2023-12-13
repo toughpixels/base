@@ -13,7 +13,7 @@ If you have access and want to edit base as you devlop, try this
 - `git submodule add git@github.com:toughpixels/base.git themes/base`
 
 If you're using public access to base, use this
-- `git submodule add https://github.com:toughpixels/base.git themes/base`
+- `git submodule add https://github.com/toughpixels/base.git themes/base`
 
 - Copy the example site to your project directory: `cp -r themes/base/exampleSite/* .`
 
