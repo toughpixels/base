@@ -1,10 +1,16 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>{{ .Param "title" }}</title>
-    {{- partial "favicons.html" . -}}
-    {{ template "_internal/opengraph.html" . }}
-    {{- $main := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
-    {{- $loadfirst := $main.Content | safeCSS }}
-    <style type="text/css">{{- $loadfirst -}}</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>{{ .Title }}</title>
+  <meta
+    property="description"
+    content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"
+  />
+  {{- partial "favicons.html" . -}} 
+  {{ template "_internal/opengraph.html" . }}
+  {{- $main := resources.Get "css/main.scss" | toCSS | minify | fingerprint }}
+  {{- $loadfirst := $main.Content | safeCSS }}
+  <style type="text/css">
+    {{- $loadfirst -}}
+  </style>
 </head>
